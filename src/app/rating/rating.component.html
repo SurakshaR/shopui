@@ -1,0 +1,132 @@
+
+<body>
+    <div clss= "entitydetails-container" >
+    
+    <div class="w3-container w3-teal">
+            <div class="sur-header-logo">
+                <img src=".\assets\images\flavours.png" alt="" >
+                <h1>FlAvOuRs CaStLe</h1>
+            </div>
+    
+    </div>
+    <div class="sur-hero-image">
+        <h2>Thank​ ​you​ ​for​ ​giving​ ​us​ ​the​ ​honour​ ​of​ ​serving​ ​you.</h2>
+     
+      
+      </div>
+     
+      <div  style="text-align: center;">
+          <h3> ​We​ ​sincerely​ ​hope​ ​that​ ​you​ ​enjoyed​ ​your time​ ​with​ ​us.​ </h3>
+          <h3> ​ ​Please​ ​answer​ ​a​ ​few​ ​questions​ ​to​ ​help​ ​us​ ​serve​ ​you​ ​better​ ​the​ ​next​ ​time.​ </h3>
+      </div>
+      <div style="text-align: center;">
+            <div [formGroup]="addEntityForm">
+                <div >
+                        <h3 class="center-block">NAME:</h3>
+                        
+                <input type= "text" formControlName="Name" placeholder="your name" required > 
+                <div style="color:red" *ngIf="addEntityForm.controls['Name'].hasError('required') &&
+                addEntityForm.controls['Name'].touched" class="alert alert-danger inputValidationErr ">
+        PLease enter
+    </div>
+                </div>
+                <br>
+                <div>
+                        <h3 class="center-block">DOB:</h3>
+                        
+                <input  type= "date" formControlName="DOB" placeholder="your dob" >
+                <div style="color:red" *ngIf="addEntityForm.controls['DOB'].hasError('required') &&
+                addEntityForm.controls['DOB'].touched" class="alert alert-danger inputValidationErr ">
+        PLease enter
+    </div>
+                    </div>
+                    
+                
+                
+            
+    
+                  <br>
+                  
+                   <div  style="text-align: center;">
+     
+                       <table>
+                         <thead>
+                           <tr>
+                               <th></th>
+                             <th>Bad</th>
+                             <th>Poor</th>
+                             <th>Average</th>
+                             <th>Good</th>
+                             <th>Excellent</th>
+                           </tr>
+                         </thead>
+                         <tbody>
+                             <tr >
+                                 <th>Food</th>
+                                 <td>
+                                      <input class="w3-radio" type="radio" formControlName="foodRate" value = "1"  >
+                                      </td>
+                                 <td>   <input class="w3-radio" type="radio" formControlName="foodRate" value = "2"   ></td>
+                                 <td>   <input class="w3-radio" type="radio" formControlName="foodRate" value = "3"  ></td>
+                                 <td>   <input class="w3-radio" type="radio" formControlName="foodRate" value = "4"  ></td>
+                                 <td>   <input class="w3-radio" type="radio" formControlName="foodRate" value = "5"  ></td>
+                               </tr>
+                               <tr >
+                                   <th>Ambiance</th>
+                                  
+                                   <td>  <input class="w3-radio" type="radio" formControlName="ambianceRate" value = "1"  ></td>
+                                    <td>   <input class="w3-radio" type="radio" formControlName="ambianceRate" value = "2"  ></td>
+                                        <td>   <input class="w3-radio" type="radio" formControlName="ambianceRate" value = "3"  ></td>
+                                            <td>   <input class="w3-radio" type="radio" formControlName="ambianceRate" value = "4"  ></td>
+                                                <td>   <input class="w3-radio" type="radio" formControlName="ambianceRate" value = "5"  ></td>
+                                 </tr>
+                                 <tr >
+                                     <th>Service</th>
+                                  
+                                     <td > <input class="w3-radio" type="radio" formControlName="serviceRate" value = "1"  ></td>
+                                     <td>   <input class="w3-radio" type="radio" formControlName="serviceRate" value = "2"  ></td>
+                                     <td>   <input  class="w3-radio" type="radio" formControlName="serviceRate" value = "3" ></td>
+                                    <td>   <input  class="w3-radio"  type="radio" formControlName="serviceRate" value = "4" ></td>
+                                     <td>   <input class="w3-radio" type="radio" formControlName="serviceRate" value = "5"></td>
+                                   </tr>
+                                   <tr >
+                                       <th>Pricing</th>
+                                       <td> <input class="w3-radio" type="radio" formControlName="priceRate" value = "1"  ></td>
+                                       <td>   <input class="w3-radio" type="radio" formControlName="priceRate" value = "2"  ></td>
+                                       <td>   <input class="w3-radio" type="radio" formControlName="priceRate" value = "3"  ></td>
+                                        <td>   <input class="w3-radio" type="radio" formControlName="priceRate" value = "4" ></td>
+                                        <td>   <input class="w3-radio" type="radio" formControlName="priceRate" value = "5" ></td>
+                                     </tr>
+    
+                               
+                         </tbody>
+                         </table>
+     
+                   </div>
+                   <div>
+                        <h3 class="center-block">FEED BACK:</h3><br>
+                        
+                <textarea formControlName="feedback" placeholder="how was are service ?"></textarea>
+                    </div>
+                    <div style="color :#b80000" *ngIf="show">
+                            <h3 >{{msg}}</h3>
+                          </div>
+               <button class="innerPageButton" (click)="rateSubmit()">submit</button>
+               
+                </div>
+    
+    
+    
+      </div>
+      <br>
+      <div class="w3-container w3-teal">
+            <span class="sur-fouter-logo">
+                <img src=".\assets\images\flavours.png" alt="" >
+                <p class="sur-footer-copyright">&copy;2017 FlAvOuRs CaStLe.</p>
+            </span>
+    
+    </div>
+      </div>
+    
+    </body>
+    <router-outlet></router-outlet>
